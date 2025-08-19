@@ -24,6 +24,7 @@ removed_fruit = fruits.pop()  # Remove arbitrary element
 print(f"Removed: {removed_fruit}")
 print(f"Remaining fruits: {fruits}")
 
+#
 # Set mathematical operations
 set_a = {1, 2, 3, 4, 5}
 set_b = {4, 5, 6, 7, 8}
@@ -40,9 +41,9 @@ intersection = set_a & set_b  # or set_a.intersection(set_b)
 print(f"Intersection (A & B): {intersection}")
 
 # Difference (elements in A but not in B)
-difference = set_a - set_b  # or set_a.difference(set_b)
+difference = set_a - set_b  # or set_a.difference(set_b) 
 print(f"Difference (A - B): {difference}")
 
 # Symmetric difference (elements in either A or B, but not both)
-sym_diff = set_a ^ set_b  # or set_a.symmetric_difference(set_b)
+sym_diff = set_a ^ set_b  # or set_a.symmetric_difference(set_b) ผลยู - ผลอิน
 print(f"Symmetric difference (A ^ B): {sym_diff}")

@@ -1,5 +1,5 @@
 # Use DICTIONARIES when:
-# 1. You need key-value relationships
+# 1. You need key-value relationships #จำเป็นต้องเก็บ คี กับ เเวรู้ววว
 student_info = {
     "id": "12345",
     "name": "Alice",
@@ -17,7 +17,7 @@ phone_book = {
 # 3. Counting occurrences
 text = "hello world hello python"
 word_count = {}
-for word in text.split():
+for word in text.split():#ระเบิด แยกมันโดยช่องว่าง เช่นอิข้างบน มันจะแยกกันเพราะเว้นช่องไว้แล้วใช้text.split
     word_count[word] = word_count.get(word, 0) + 1
 print(f"Word count: {word_count}")
 

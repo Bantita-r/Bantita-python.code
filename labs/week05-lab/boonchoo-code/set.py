@@ -1,7 +1,7 @@
 # Empty set (note: {} creates empty dict, not set)
 empty_set = set()
 
-# Set with initial values
+# Set with initial values 
 colors = {"red", "green", "blue", "yellow"}
 numbers = {1, 2, 3, 4, 5}
 mixed_set = {1, "hello", 3.14, True}
