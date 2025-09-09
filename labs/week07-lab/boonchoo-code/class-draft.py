@@ -10,6 +10,6 @@ class ClassName:
         return something
 
 
-myObj = ClassName(parameters)
-print(myObj.attribute)
-resultFromMethod = myObj.method_name()
+myObj = ClassName(parameters) #ต้องส่งสิ่งนี้เข้าไปด้วยจากที่อยู่ในบรรทัด4
+print(myObj.attribute)#เข้าถึงค่านั้น
+resultFromMethod = myObj.method_name()#การเรียกใช้

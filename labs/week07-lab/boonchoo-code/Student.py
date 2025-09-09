@@ -1,7 +1,7 @@
 class Student:
     """A simple Student class"""
     
-    def __init__(self, name, age, student_id):
+    def __init__(self, name, age, student_id):#ข้อมูลนร 
         self.name = name           # Instance attribute
         self.age = age            # Instance attribute
         self.student_id = student_id  # Instance attribute
@@ -11,12 +11,12 @@ class Student:
         """Method to introduce the student"""
         return f"Hi, I'm {self.name}, {self.age} years old, ID: {self.student_id}"
     
-    def add_course(self, course):
+    def add_course(self, course):#เพิ่มวิชาที่จะเรียน
         """Method to add a course"""
         self.courses.append(course)
         return f"{course} added successfully!"
     
-    def show_courses(self):
+    def show_courses(self):#แสดงวิชาที่เรียนทั้งหมด
         """Method to display all courses"""
         if self.courses:
             return f"Courses: {', '.join(self.courses)}"
@@ -26,9 +26,10 @@ class Student:
 # Creating objects (instances)
 student1 = Student("Alice", 20, "S001")
 student2 = Student("Bob", 19, "S002")
+student3 = Student("Boy", 25, "S003")
 
 # Using methods
-print(student1.introduce())
+print(student1.introduce())#จะเรียกใช้และขึ้นมาแบบบรรทัดที่12
 print(student1.add_course("Python Programming"))
 print(student1.add_course("Data Structures"))
 print(student1.show_courses())
