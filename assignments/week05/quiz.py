@@ -5,7 +5,7 @@ def contact_book():
     Each contact: {"name": str, "phone": str, "email": str, "category": str}
     """
     
-    # Initialize empty contacts dictionary
+    # Initialize empty contacts dictionary จัดการบัญชีผู้ติดต่อโดยใช้ดิก
     # Key: contact name (string), Value: contact info (dictionary)
     contacts = {
         "John Doe": {"phone": "123-456-7890", "email": "john@example.com", "category": "friend"},
