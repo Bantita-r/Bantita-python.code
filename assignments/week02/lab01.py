@@ -1,3 +1,4 @@
+#BMI Calculator (20 points)
 weight =float(input("Weight:"))
 height = float(input("Height:"))
 bmi = weight / height ** 2
