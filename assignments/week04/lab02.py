@@ -1,55 +1,51 @@
-"""
-Number List Operations
+"""Assignment 2.2: โปรแกรมช่วยตัดสินใจเลือกซื้อสินค้าภายใต้งบประมาณรวม (buy-notbuy.py)
 
-Ask user to input 10 numbers and store them in a list
-Display the original list
+ให้รับราคาสินค้าจำนวน 6 รายการเก็บไว้ในตัวแปรชนิด list และรับงบประมาณ "รวม" จากผู้ใช้ 1 ค่า จากนั้นให้พิจารณาสินค้าตามลำดับใน list ว่าสามารถซื้อได้หรือไม่ โดยถ้าการซื้อสินค้าชิ้นนั้นแล้วทำให้ยอดใช้จ่ายรวมไม่เกินงบประมาณ ให้ถือว่า “buy” และนำราคาสินค้านั้นไปรวมกับยอดใช้จ่าย แต่ถ้าทำให้ยอดรวมเกินงบประมาณ ให้ถือว่า “cannot buy”
 
-Create and display:
+ทั้งนี้ให้โปรแกรมขอให้ “พิจารณาตามลำดับใน list” และ “ใช้ยอดสะสมรวมในการตัดสิน” ไม่ใช่ "งบต่อชิ้น" แต่เป็นงบทั้งก้อนที่ลดลงเรื่อย ๆ ตามรายการที่ซื้อ
 
-List of even numbers
-List of odd numbers
-List of numbers greater than the average
+กระบวนการทำงาน 
+รับราคาสินค้า 6 ค่าและเก็บใน list
+รับงบประมาณรวม 1 ค่า
+ใช้ loop และ if-else ตรวจสอบราคาสินค้าทีละรายการตามลำดับ
+ใช้ตัวแปรสำหรับเก็บยอดใช้จ่ายสะสม
+ถ้ายอดใช้จ่ายสะสมบวกกับราคาสินค้าชิ้นปัจจุบันแล้วไม่เกินงบประมาณ ให้แสดงข้อความว่า “buy”
+ถ้าเกินงบประมาณ ให้แสดงว่า “cannot buy”
+เก็บรายการสินค้าที่ซื้อได้ไว้ใน list ใหม่
+แสดงรายการสินค้าที่ซื้อได้ ยอดใช้จ่ายรวม และงบประมาณคงเหลือ"""
 
 
-Show statistics: sum, average, min, max
+print("Enter prices of 6 items:")
+prices = []
+for i in range(1, 7):
+    price = int(input(f"Item {i}: "))
+    prices.append(price)
 
-"""
+print()
 
-def number_operations():
-    numbers = []
-    # Get 10 numbers from user
-    print("Enter 10 numbers:")
-    for i in range(10):
-        # Your code here
-        number = int(input("Insert number [" + i +"]: "))
-        number.append(number)
-    # Display original list
-    print(f"Original numbers: {numbers}")
-    # Create filtered lists
-    even_numbers = [] # Your code here
-    odd_numbers = [] # Your code here
-    # Calculate average
-    average = sum(number)/10.0    # Your code here
-    # Numbers greater than average
-    above_average = [] # Your code here
-    for i in range(10):
-        if numbers[i] % 2 == 0:
-            even_numbers.append(numbers[i])
-        else:
-            odd_numbers.append(numbers[i])
+total_budget = int(input("Enter total budget: "))
+print()
 
-        if numbers[i] > average:
-            above_average.append(numbers[i])
+# ตัวแปรสำหรับเก็บยอดใช้จ่ายสะสม และ list ใหม่สำหรับเก็บรายการสินค้าที่ซื้อได้
+current_total = 0
+bought_items = []
+
+for i in range(len(prices)):
+    item_price = prices[i]
     
-    # Display results
-    # Your code here
-    print("Even Number List: ", even_numbers)
-    print("Odd numbers:", odd_numbers)
-    print(" Above Average:", above_average)
-    print("Sum:", sum(numbers))
-    print("Average:", average)
-    print("Min:", min(numbers))
-    print("Max:", max(numbers))
+    # ถ้ายอดใช้จ่ายสะสมบวกกับราคาสินค้าชิ้นปัจจุบันแล้วไม่เกินงบประมาณ
+    if current_total + item_price <= total_budget:
+        current_total += item_price
+        bought_items.append(item_price)
+        status = "buy"
+    else:
+        status = "cannot buy"
+        
+    print(f"Item {i + 1} = {item_price} -> {status}")
+    print(f"Current total = {current_total}\n")
 
-if __name__ == "__main__":
-    number_operations()
+remaining_budget = total_budget - current_total
+
+print(f"Bought items: {bought_items}")
+print(f"Total spent: {current_total}")
+print(f"Remaining budget: {remaining_budget}")

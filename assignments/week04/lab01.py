@@ -1,56 +1,23 @@
-"""
-Personal Information Manager 
+"""Assignment 2.1: โปรแกรมเพื่อการตรวจสอบผลการสอบ (exam-score.py)
 
-#Create a tuple to store a person's basic info: (name, age, city, country)
-#Create a list to store their hobbies 
+ให้รับคะแนนสอบของนักเรียนจำนวน 5 คนเก็บไว้ในตัวแปรชนิด list จากนั้นให้ตรวจสอบคะแนนของนักเรียนแต่ละคนว่าผ่านหรือไม่ผ่าน โดยกำหนดว่าคะแนน 50 คะแนนขึ้นไปถือว่าผ่าน
 
-Allow the user to:
+กระบวนการทำงาน
+รับคะแนน 5 ค่า เก็บคะแนนทั้งหมดไว้ใน list (เก็บคะแนนทั้งหมดก่อนค่อยไปตรวจสอบ)
+ใช้ loop ตรวจสอบคะแนนทีละค่า (ใช้ "for" loop วน เพื่อการตรวจสอบ)
+ใช้ condition (if-else) แสดงผลว่า “ผ่าน” หรือ “ไม่ผ่าน”"""
 
-Display all information 
-Add new hobbies
-Remove hobbies
-Update age (by creating a new tuple)
+scores = []
+for i in range(1, 6):
+    score = int(input(f"Enter score of student {i}: "))
+    scores.append(score)
 
-"""
+print()
 
-# Complete this program
-def personal_info_manager():
-    # Create initial person tuple
-    person = ("Bantita", 20, "Chonburi", "TH")  # name, age, city, country
-    hobbies = [""]
-
-    while True:
-
-      choice = input("What do your want to do? (1: display, 2: add hobby, 3: remove hobby, 4: edit age, 5: exit): ")
-    
-    # Your code here
-      if choice == "1":
-        #display all info
-        print("Name: ", person[0])
-        print("Age: ",person[1])
-        print("City: ",person[2])
-        print("Country: ",person[3])
-        print("Hobbies: ",hobbies)
-
-      elif choice == "2":
-        # append hobby
-        hobbies = intput("What is your new hobbies: ")
-        hobbies.append(hobby)
-
-      elif choice == "3":
-        #remove hobby
-        hobbies.pop()
-
-    
-      elif choice == "4":
-        #edit age
-        person_list = list(person)   #["Bantita", 20, "Chonburi", "TH"]
-        age = input("How old are you?: ")
-        person_list[1] = age
-        person = tuple(person_list)
-
-      elif choice == "5":
-        break
-
-if __name__ == "__main__":
-    personal_info_manager()
+for i in range(len(scores)):
+    if scores[i] >= 50:
+        result = "ผ่าน"
+    else:
+        result = "ไม่ผ่าน"
+        
+    print(f"Student {i + 1}: {scores[i]} -> {result}")
