@@ -23,20 +23,25 @@ rect = Rectangle(10, 5)
 print(rect.get_area())       # Should print 50
 print(rect.get_perimeter())  # Should print 30
 
-
+"""
+ขอให้เขียนคลาส Circle ที่ทำงานคล้ายคลึงกับคลาส Rectangle พร้อมตัวอย่างการใช้งาน
+"""
 
 class Circle:
+    # ปรับให้ถูกต้องกับความเป็นวงกลม
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
 
-    def _init__(self, radius):
-        self.radius = radius
-        print("Circle created!")
-    
-    def getAre(self):
-        return 3.1416 * self.radius * self.radius
-    
-    def getPerimeter(self):
-        return 2 * 3.1416 * self. radius
-    
+    # Method to get the area ปรับสูตรพื้นที่วงกลม
+    def get_area(self):
+        return self.length * self.width
+
+    # Method to get the perimeter ปรับสูตรเส้นรอบวงวงกลม
+    def get_perimeter(self):
+        return f"Perimeter = {self.length} * {self.width} = {2 * (self.length * self.width)}"
+
+
 myCircle = Circle(10)
-print(myCircle. getArea())
-print(nyCircle.getPerimeter))
+print(myCircle.get_area())
+print(myCircle.get_perimeter())
