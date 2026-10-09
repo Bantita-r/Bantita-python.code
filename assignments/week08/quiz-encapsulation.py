@@ -38,5 +38,4 @@ print(myRectangle.isSquare())
 
 
 
-
     
