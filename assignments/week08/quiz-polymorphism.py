@@ -23,4 +23,4 @@ class Dog(Animal):
        return "The dog runs on the ground."
 
 def animal_move(animal: Animal):
-   print(animal.move())
+   print(animal.move())  
